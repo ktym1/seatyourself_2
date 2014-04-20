@@ -1,0 +1,15 @@
+<%= link_to "Back to Restaurants", restaurants_path %> | 
+<%= link_to "Edit", edit_restaurant_path(@restaurant) %> |
+<%= link_to "Delete", @restaurant, :confirm => "Are you sure you want to delete this product?", :method => :delete %>
+
+<p>
+	<ul>
+		<li> Name: <%= @restaurant[:name] %> </li>
+		<li> Address: <%= @restaurant[:address] %> </li>
+		<li> Phone: <%= @restaurant[:phone] %> </li>
+		<li> Capacity: <%= @restaurant[:capacity] %> </li>
+		<li> Menu: <%= @restaurant[:menu] %> </li>
+	</ul>
+
+</p>
+

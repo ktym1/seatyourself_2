@@ -1,0 +1,32 @@
+<h1> Restaurants </h1>
+
+<%= link_to "Add a Restaurant", new_restaurant_path %>
+
+<% @restaurants.each do |restaurant| %>
+
+<div class="restaurant list">
+	<h5>
+		Name: <%= link_to restaurant[:name], restaurant_path(restaurant) %>
+	</h5>
+	
+	<ul>
+		<li>
+			Address: <%= link_to restaurant[:address], restaurant_path(restaurant) %>
+		</li>
+
+		<li>
+			Phone: <%= link_to restaurant[:phone], restaurant_path(restaurant) %>
+		</li>
+	
+		<li>
+			Capacity: <%= link_to restaurant[:capacity], restaurant_path(restaurant) %>
+		</li>
+	
+		<li>
+			Menu: <%= link_to restaurant[:menu], restaurant_path(restaurant) %>
+		</li>
+	</ul>
+
+</div>
+
+<% end %>

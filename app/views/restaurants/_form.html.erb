@@ -1,0 +1,32 @@
+<%= form_for(@restaurant) do |form| %>
+
+	<p>
+		<%= form.label :name %> <br>
+		<%= form.text_field :name %>
+	</p>
+
+	<p>
+		<%= form.label :address %> <br>
+		<%= form.text_field :address %>
+	</p>
+
+	<p>
+		<%= form.label :phone %> <br>
+		<%= form.text_field :phone %>
+	</p>
+
+	<p>
+		<%= form.label :capacity %> <br>
+		<%= form.text_field :capacity %>
+	</p>
+
+	<p>
+		<%= form.label :menu %> <br>
+		<%= form.text_field :menu %>
+	</p>
+
+	<p>
+		<%= form.submit "Save" %> <br>
+	</p>
+	
+<%end%>
