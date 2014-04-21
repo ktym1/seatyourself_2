@@ -1,7 +1,7 @@
 class Reservation < ActiveRecord::Base
 	belongs_to :restaurant
 	belongs_to :users
-	
+
 	validates :restaurant, presence: true
 	validate :availability
 

@@ -6,14 +6,16 @@ class ReservationsController < ApplicationController
   end
 
   def create
-    @reservation = @restaurant.reservation.build(reservation_params)
+    @reservation = @restaurant.reservations.build(reservation_params)
     @reservation.user_id = current_user.id
 
     if @reservation.save
       redirect_to restaurants_path, notice: "Reservation created successfully"
 
     else
-      render :action => :show
+      redirect_to restaurants_path, notice: "Reservation not created"
+      # render :controller => :restaurants, :action => :show, :alert => "No Reservation Created"
+      
     end
   end
 

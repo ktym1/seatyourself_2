@@ -13,6 +13,41 @@
 
 </p>
 
-<p>
-	<% if current_user %>
-</p>
+
+<h3> Reservations </h3>
+
+<%= form_for([@restaurant, @reservation]) do |form| %>
+	<% if @reservation.errors.any? %>
+		<div id="error_explanation" >
+			<h2> <%= pluralize(@restaurant.errors.count, "error") %> prohibited this reservation from being saved: </h2>
+
+		<ul>
+			<% @reservation.errors.full_messages.each do |msg| %>
+			<li> <%= msg %></li>
+			<% end %>
+		</ul>
+	</div>
+<% end %>
+
+
+	<p>
+		<%= form.label :party_size %> <br>
+		<%= form.number_field :party_size %>
+	</p>
+
+	<p>
+		<%= form.label :party_time %> <br>
+		<%= form.time_field :party_time %>
+	</p>
+
+	<div class="actions">
+		<p>
+			<%= form.submit "Save" %> <br>
+		</p>
+	</div>	
+<%end%>
+
+<% else %>
+
+<p> Please <%= link_to "log in", new_session_path %> to add a reservation. </p>
+

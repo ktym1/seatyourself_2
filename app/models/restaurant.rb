@@ -3,7 +3,7 @@ class Restaurant < ActiveRecord::Base
 	has_many :users, :through => :reservations
 
 	validates :name, :address, :phone, :capacity, :presence => true
-	def availability(party_size)
+	def availability(party_size, party_time)
 		reserve_size = reservations.where(party_time: party_time).sum(:party_size)
 		reserve_size + party_size <= capacity
 	end

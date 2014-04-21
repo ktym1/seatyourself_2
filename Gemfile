@@ -45,5 +45,6 @@ gem 'bcrypt', '~> 3.1.7'
 # gem 'debugger', group: [:development, :test]
 
 group :development, :test do
+	gem 'quiet_assets'
   gem 'rspec-rails', '~> 3.0.0.beta'
 end
